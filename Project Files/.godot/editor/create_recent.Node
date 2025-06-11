@@ -1,0 +1,14 @@
+Control
+Label
+ColorRect
+AnimationPlayer
+CanvasLayer
+Node
+AudioStreamPlayer2D
+Timer
+CollisionShape2D
+Area2D
+CharacterBody2D
+RigidBody2D
+Node2D
+RayCast2D

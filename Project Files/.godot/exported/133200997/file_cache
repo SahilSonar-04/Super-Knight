@@ -1,0 +1,14 @@
+res://Scenes/coin.tscn::2f235ca0d99cd6e1ef4fdc7a493f6fab::1749641245::res://.godot/exported/133200997/export-cfd538a465b9799b811984d89e43d2b9-coin.scn
+res://Scenes/platform.tscn::aa5877d7c99eac9fb585769888dea807::1749641245::res://.godot/exported/133200997/export-1c750248b0c8da796cecd1f6aa3f1f6d-platform.scn
+res://Scenes/player.tscn::2fd6694474d7a4a2ab5414cbc962bbe3::1749641245::res://.godot/exported/133200997/export-1753c997600d68ab5d20ae99fddb15c6-player.scn
+res://Scenes/kill_zone.tscn::07c3503346219173b706d96bc96c1223::1749641245::res://.godot/exported/133200997/export-f14958c3a420879ac435c81546a8e8d9-kill_zone.scn
+res://Scenes/music.tscn::0f562597d25c3313a7ef7c5480108c16::1718792672::res://.godot/exported/133200997/export-8a0c1623dae146fc4e600156cf1e3850-music.scn
+res://default_bus_layout.tres::2542c2cd14b4007e93c4cea6eb69429d::1718793533::res://.godot/exported/133200997/export-19246414aa9fb561ced4b8dce477acec-default_bus_layout.res
+res://Scenes/Levels/level.tscn::9edc91704a3aa9075ef59028543a983f::1749641245::res://.godot/exported/133200997/export-f4906329942c7016c08b53e16ecee32a-level.scn
+res://Scenes/Levels/level_01.tscn::bed6083c39bdad5b0b01a50a531a76e1::1749641245::res://.godot/exported/133200997/export-3bee8ec6c12ea52acf3928b23c9041d0-level_01.scn
+res://Scenes/Levels/level_02.tscn::b28071656dd96be2c48957312fd8105f::1749641245::res://.godot/exported/133200997/export-b48ca7b7080be97c3ffbcc59c860b80e-level_02.scn
+res://Scenes/home.tscn::fffbb750eeb4ff8bffca240a1a7c74c3::1749641246::res://.godot/exported/133200997/export-f16688a7aff0e68ca2599f39643f8705-home.scn
+res://Scenes/slime_green.tscn::caf93d2e69373e6475bab7f5062462da::1723052987::res://.godot/exported/133200997/export-4464fc375907b288492183d33494b52d-slime_green.scn
+res://Scenes/slime_purple.tscn::d682b7eb3a9497590d5bfae7ada893f3::1749641246::res://.godot/exported/133200997/export-12cda32ef90c503ef0d2078b09c8fb72-slime_purple.scn
+res://Scenes/transitions.tscn::6e4cd2699c16fa3112366127ff2c37ba::1749641246::res://.godot/exported/133200997/export-9718e647eb545631073ae5f0690aa4db-transitions.scn
+res://Scenes/Levels/End.tscn::9d48a50d1c32ec9ec6ef068ace731869::1749641301::res://.godot/exported/133200997/export-b9b9c0f00f03ed8a6f61db84128d3b5e-End.scn

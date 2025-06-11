@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://coytslb4sq6cf"]
+
+[ext_resource type="Script" path="res://Scripts/home.gd" id="1_1jg02"]
+[ext_resource type="Texture2D" uid="uid://bmtq7hil3joho" path="res://Assets/sprites/home.png" id="2_l1odw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk10w"]
+size = Vector2(24, 27)
+
+[node name="Home" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_1jg02")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(70, -55)
+texture = ExtResource("2_l1odw")
+region_enabled = true
+region_rect = Rect2(186, 246, 140, 108)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(89, -14.5)
+shape = SubResource("RectangleShape2D_kk10w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

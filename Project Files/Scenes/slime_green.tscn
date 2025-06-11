@@ -1,0 +1,140 @@
+[gd_scene load_steps=19 format=3 uid="uid://c6e6y7egx5wg4"]
+
+[ext_resource type="Texture2D" uid="uid://bj5bdg3up4h2w" path="res://Assets/sprites/slime_green.png" id="1_4uqyh"]
+[ext_resource type="Script" path="res://Scripts/slime.gd" id="1_utm1q"]
+[ext_resource type="PackedScene" uid="uid://dpoxca613q34c" path="res://Scenes/kill_zone.tscn" id="2_5koj4"]
+[ext_resource type="Script" path="res://Scripts/Hitbox.gd" id="4_p70gk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_252pl"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ficby"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8nhu"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j308q"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfgx0"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(0, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mabsp"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(24, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0nj3"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(72, 48, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pni4"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqdsm"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0nse"]
+atlas = ExtResource("1_4uqyh")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2g25l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_252pl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ficby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8nhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j308q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfgx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mabsp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0nj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7pni4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqdsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0nse")
+}],
+"loop": false,
+"name": &"die",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v2o"]
+size = Vector2(10, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1n2"]
+size = Vector2(4, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ckr8"]
+size = Vector2(14, 14)
+
+[node name="Slime" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 41
+script = ExtResource("1_utm1q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2g25l")
+animation = &"die"
+autoplay = "default"
+
+[node name="KillZone" parent="." instance=ExtResource("2_5koj4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_g4v2o")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(7, 0)
+collision_mask = 8
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(0, 5)
+target_position = Vector2(-7, 0)
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_bo1n2")
+disabled = true
+
+[node name="Hitbox" type="Area2D" parent="." groups=["hit"]]
+collision_layer = 4
+collision_mask = 32
+script = ExtResource("4_p70gk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_4ckr8")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="Hitbox" method="_on_animated_sprite_2d_animation_finished"]

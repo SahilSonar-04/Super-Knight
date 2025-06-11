@@ -1,0 +1,14 @@
+res://Scenes/player.tscn
+res://Scenes/platform.tscn
+res://Scenes/coin.tscn
+res://Scenes/kill_zone.tscn
+res://Scenes/Levels/level.tscn
+res://Scenes/Levels/level_01.tscn
+res://Scenes/Levels/level_02.tscn
+res://Scenes/transitions.tscn
+res://Scenes/Levels/level_03.tscn
+res://Scenes/home.tscn
+res://Scenes/slime_purple.tscn
+res://Scripts/coin.gd
+res://Scenes/Levels/End.tscn
+res://Scripts/End.gd
